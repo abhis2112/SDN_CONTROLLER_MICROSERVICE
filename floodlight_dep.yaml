@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: floodlight-deployment
+  labels:
+    app: floodlight
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: floodlight
+  template:
+    metadata:
+      labels:
+        app: floodlight
+    spec:
+      containers:
+      - name: floodlight
+        image: glefevre/floodlight:latest
+        command: ["/bin/sh","-c"]
+        args: ["java -jar target/floodlight.jar"]

@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ryu-controller-service
+spec:
+  selector:
+    app: ryu
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 6653
+    targetPort: 6653

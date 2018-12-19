@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ryu
+spec:
+  containers:
+  - name: ryu
+    image: osrg/ryu
+    command: ["/bin/sh","-c"]
+    args: ["cd ryu/ryu/app;ryu run simple_switch_13.py"]

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mininet
+spec:
+  containers:
+  - name: mininet
+    image: iwaseyusuke/mininet
+    command: ["/bin/sh","-c"]
+    args: ["sudo mn --controller=remote,ip=172.18.18.101,port=31262 --switch=ovsk,protocols=OpenFlow13"]

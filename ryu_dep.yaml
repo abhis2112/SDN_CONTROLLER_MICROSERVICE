@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ryu-deployment
+  labels:
+    app: ryu
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ryu
+  template:
+    metadata:
+      labels:
+        app: ryu
+    spec:
+      containers:
+      - name: ryu
+        image: osrg/ryu:latest
+        command: ["/bin/sh","-c"]
+        args: ["cd ryu/ryu/app;ryu run simple_switch_13.py gui_topology/gui_topology.py --observe-links --verbose"]

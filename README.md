@@ -25,3 +25,9 @@ The goal of the project is to provide an architecture for SDN controller applica
 3.	High Availability: The High-Availability is achieved by creating a Service in kubernetes. The service endpoint ensures that the user request reaches to either one of the pod from a group of pods running the identical application. This ensures unbroken application accessibility even if one pod is deleted/broken. The request will be diverted to the other pod.
 
 4.	Resiliency: The replicas of an application deployed is maintained by the Replica-set which is the next generation Replication Controller. A Replica-Set ensures that the specified number of pod replicas should be running at any given time. Thus, if any pod gets destroyed or deleted somehow, the Replica-Set will come into action and deploy a new pod immediately ensuring the specified number. This facilitates faster and reliable resilient architecture with accepted bandwidth.
+
+
+# Kubernetes Calico Cluster Setup 
+https://docs.projectcalico.org/v3.0/getting-started/kubernetes/installation/vagrant/
+
+
